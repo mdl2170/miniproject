@@ -3,16 +3,22 @@
     <img class="card-img-top" src="{ imageURL }" style="height: 225px; width: 100%; display: block;">
     <div class="card-body">
       <h4>{ title }</h4>
-      <p><small class="text-muted">{ publishedDate }</small><br/>
-      <small class="text-muted">by { author }</small></p>
+      <p><small class="{newClass} text-muted">{ publishedDate }</small><br/>
+      <small class="{newClass} text-muted">by { author }</small></p>
       <p class="card-text">{ bodyText }</p>
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-outline-secondary"  onclick={ read }>Read</button>
           <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ share }>Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>Check</button>
       </div>
     </div>
   </div>
 
+  <style>
+  .xclass{
+    background-color: yellow;
+  }
+  </style>
 
 <script>
   read(event) {
@@ -25,6 +31,10 @@
         alert("Noteworthy news to share.");
       }
   }
+
+  check(event){
+this.newClass = "xclass";
+}
 </script>
 
 </post>
