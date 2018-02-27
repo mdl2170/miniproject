@@ -13,16 +13,16 @@
     </div>
   </div>
 
-
 <script>
   read(event) {
-    console.log(event);
+    this.isSelected = true;
+    observable.trigger('postSelected', this);
   }
   share(event) {
     if (this.isFake)
-      alert("Think before sharing. It is fake news.");
+      alert("Are you sure? You may be sharing the fake virus.");
       else {
-        alert("Your friends would appreciate your sharing.");
+        alert("Noteworthy news to share.");
       }
   }
 </script>

@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet"> -->
+  <link href="css/news.css" rel="stylesheet">
   <link href="css/bootstrap.css" rel="stylesheet">
   <title>Welcome to Fakebook</title>
 </head>
@@ -47,10 +49,10 @@
             <div class="container">
               <h1 class="jumbotron-heading">Welcome to Fakebook</h1>
               <p class="lead text-muted">What would you like to read today?</p>
-              <p>
+              <!-- <p>
                 <a href="#" class="btn btn-primary my-2">News 1</a>
                 <a href="#" class="btn btn-secondary my-2">News 2</a>
-              </p>
+              </p> -->
             </div>
           </section>
 
@@ -66,11 +68,12 @@
   </footer>
 
   <script src="tags/app.tag" type="riot/tag"></script>
-
+  <script src="tags/article.tag" type="riot/tag"></script>
   <script src="tags/post.tag" type="riot/tag"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.8.1/riot+compiler.js"></script>
 
   <script>
+    var observable = riot.observable();
     riot.mount('*');
   </script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
