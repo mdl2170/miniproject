@@ -20,16 +20,13 @@
 
                 <span>{ opts.selectedPost.bodyText }</span>
                 <br>
+                  <br>
+                    <br>
 
-<p class=" blog-post-meta">{ opts.selectedPost.question }</p>
-
-<label each={ word in opts.selectedPost.choices}><input type="radio"></input>
- { word}
-</label>
-
+<p class=" blog-post-meta ">{ opts.selectedPost.question }</p>
 
 <label each={ choice in opts.selectedPost.choices }>
-  <input type="radio"  value={ opts.selectedPost.answer } onclick={ setAnswer }></input> { choice } <br>
+  <input type="radio"  value={ opts.selectedPost.answer } onclick={ setAnswer }></input> { choice }<br>
 </label>
 
 
