@@ -1,5 +1,5 @@
 <app>
-  <div class="album py-5 bg-light">
+  <div class="album py-5 bg-light" hide={ selectedPostID != -1}>
     <div class="container">
 
       <div class="row">
@@ -8,13 +8,13 @@
     </div>
   </div>
 
-  <article selected-post={ postList[selectedPostID] } show={ selectedPostID != -1 }>
-
-  </article>
+  <article selected-post={ postList[selectedPostID] } if={ selectedPostID != -1 }></article>
 
   <script>
-  this.selectedPostID = -1;
-  this.postList = [
+  var app = this;
+
+  app.selectedPostID = -1;
+  app.postList = [
   {
     postID: 0,
     imageURL: "https://climate.nasa.gov/system/news_items/main_images/2683_LOTI_201801_robin_sf200.png",
@@ -61,13 +61,17 @@
   },
 ];
 
-  this.on('update', function() {
-    alert("something");
+  observable.on('postSelected', function(post){
+      if( post == -1)
+        app.selectedPostID = -1;
+      else
+        app.selectedPostID = post.postID;
+
+      riot.update();
   });
 
-  observable.on('postSelected', function(post){
-      this.selectedPostID = post.postID;
-      console.log(this.selectedPostID);
+  this.on('update', function() {
+    //do something
   });
 
   </script>
