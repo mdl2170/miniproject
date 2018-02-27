@@ -17,7 +17,7 @@
   read(event) {
     observable.trigger('postSelected', this);
   }
-  
+
   share(event) {
     if (this.isFake)
       alert("Are you sure? You may be sharing the fake virus.");
