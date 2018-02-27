@@ -1,4 +1,11 @@
 <app>
+  <section class="jumbotron text-center" hide={ selectedPostID != -1}>
+        <div class="container">
+          <h1 class="jumbotron-heading">Welcome to Fakebook</h1>
+          <p class="lead text-muted">What would you like to read today?</p>
+        </div>
+  </section>
+
   <div class="album py-5 bg-light" hide={ selectedPostID != -1}>
     <div class="container">
 
