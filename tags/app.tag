@@ -75,25 +75,7 @@
           "no idea",
         ],
         answer: "yes"
-  },
-  {
-    postID: 3,
-    imageURL: "https://i.imgur.com/VW4mhhH.png",
-    postURL: "http://time.com/5169210/us-gun-control-laws-history-timeline/",
-    author: "Sarah Gray",
-    publishedDate: "02/22/2018",
-    linkText: "Time.com",
-    bodyText: "Through their grief, the students from Marjory Stoneman Douglas High School have become a political force. One week after 19-year-old Nikolas Cruz allegedly used an AR-15 to shoot and kill 17 people at the school, around 100 students met with lawmakers in the Florida state capital to advocate for gun control. They also met with President Trump in the White House Wednesday. In organizing the March For Our Lives, they’ll rally next month in Washington, D.C. But with the right of gun ownership enshrined in the U.S. Constitution, gun regulations remain a thorny issue in the U.S. Throughout history, there have been several laws and Supreme Court cases that have shaped the Second Amendment. This timeline outlines the most important events in influencing the country’s federal gun policy.",
-    title: "Here’s a Timeline of the Major Gun Control Laws in America",
-    isFake: true,
-    question: "Do you think the evidence is strong enough?",
-    choices: [
-          "yes",
-          "no",
-          "no idea",
-        ],
-        answer: "yes"
-  },
+  }
 ];
 
   observable.on('postSelected', function(post){
