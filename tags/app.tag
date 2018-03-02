@@ -49,14 +49,25 @@
     linkText: "Natural News",
     bodyText: "NASA’s own data reveal that world-wide ocean levels have been falling for nearly two years, dropping from a variation of roughly 87.5mm to below 85mm. These data, of course, clearly contradict the false narrative of rapid, never-ending rising ocean levels that flood continents and drown cities — a key element of the climate change “boogeyman” fiction that’s used to scare gullible youth into making Al Gore rich.",
     title: "Climate Change",
+<<<<<<< HEAD
     isFake: true
-    // question: "Is the date right?",
+    // question: "Have you checked the date?",
     // choices: [
     //       "yes",
     //       "no",
-    //       "no idea",
+    //
     //     ],
     //     answer: "yes"
+=======
+    isFake: true,
+    question: "Are the references accurate?",
+    choices: [
+          "yes",
+          "no",
+          "no idea",
+        ],
+        answer: "yes"
+>>>>>>> master
   },
   {
     postID: 2,
@@ -67,8 +78,9 @@
     linkText: "Time.com",
     bodyText: "Through their grief, the students from Marjory Stoneman Douglas High School have become a political force. One week after 19-year-old Nikolas Cruz allegedly used an AR-15 to shoot and kill 17 people at the school, around 100 students met with lawmakers in the Florida state capital to advocate for gun control. They also met with President Trump in the White House Wednesday. In organizing the March For Our Lives, they’ll rally next month in Washington, D.C. But with the right of gun ownership enshrined in the U.S. Constitution, gun regulations remain a thorny issue in the U.S. Throughout history, there have been several laws and Supreme Court cases that have shaped the Second Amendment. This timeline outlines the most important events in influencing the country’s federal gun policy.",
     title: "Here’s a Timeline of the Major Gun Control Laws in America",
+<<<<<<< HEAD
     isFake: false
-    // question: "Is the date right?",
+    // question: "Have you checked the date?",
     // choices: [
     //       "yes",
     //       "no",
@@ -86,7 +98,7 @@
     bodyText: "Through their grief, the students from Marjory Stoneman Douglas High School have become a political force. One week after 19-year-old Nikolas Cruz allegedly used an AR-15 to shoot and kill 17 people at the school, around 100 students met with lawmakers in the Florida state capital to advocate for gun control. They also met with President Trump in the White House Wednesday. In organizing the March For Our Lives, they’ll rally next month in Washington, D.C. But with the right of gun ownership enshrined in the U.S. Constitution, gun regulations remain a thorny issue in the U.S. Throughout history, there have been several laws and Supreme Court cases that have shaped the Second Amendment. This timeline outlines the most important events in influencing the country’s federal gun policy.",
     title: "Here’s a Timeline of the Major Gun Control Laws in America",
     isFake: true
-    // question: "Is the date right?",
+    // question: "Have you checked the date?",
     // choices: [
     //       "yes",
     //       "no",
@@ -94,6 +106,17 @@
     //     ],
     //     answer: "yes"
   },
+=======
+    isFake: false,
+    question: "Are the references accurate?",
+    choices: [
+          "yes",
+          "no",
+          "no idea",
+        ],
+        answer: "yes"
+  }
+>>>>>>> master
 ];
 
   observable.on('postSelected', function(post){
