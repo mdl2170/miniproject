@@ -32,11 +32,11 @@
     bodyText: "January 2018 was the fifth warmest January in 138 years of modern record-keeping, according to a monthly analysis of global temperatures by scientists at NASA's Goddard Institute for Space Studies (GISS) in New York. It was cooled somewhat by the current La Niña phase of the El Niño-Southern Oscillation. Last month was +0.78°C warmer than the average January of the 1951-1980 period. The only months of January warmer than that occurred in 2016 (+1.16°C), 2017 (+0.97°C), 2007 (+0.95°C), and in 2015 (+0.81°C). The East Coast of North America was cooler than normal — 1-2°C below the 1951-1980 mean — whereas the rest of the continent was about 5°C warmer than that period.",
     title: "January 2018 was fifth warmest January on record",
     isFake: false,
-    question: "Is the date right?",
+    question: "Have you checked the date?",
 		choices: [
 					"yes",
 					"no",
-					"no idea",
+
 				],
 				answer: "yes"
   },
@@ -84,7 +84,7 @@
     // choices: [
     //       "yes",
     //       "no",
-    //       "no idea",
+    //
     //     ],
     //     answer: "yes"
   },
@@ -102,7 +102,7 @@
     // choices: [
     //       "yes",
     //       "no",
-    //       "no idea",
+    //
     //     ],
     //     answer: "yes"
   },
