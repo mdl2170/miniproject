@@ -20,7 +20,7 @@
 
   share(event) {
     if (this.isFake)
-      alert("Are you sure? You may be spreading the fake virus.");
+      alert("Let's find out more about this article.");
       else {
         alert("Noteworthy news to share.");
       }

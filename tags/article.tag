@@ -68,10 +68,9 @@
               <div class="p-3 bg-light">
                 <h4 class="font-italic">Useful Resources</h4>
                 <ol class="list-unstyled mb-0">
-                  <li><a href="#">Link 1</a></li>
-                  <li><a href="#">Link 2</a></li>
-                  <li><a href="#">Link 3</a></li>
-                  <li><a href="#">Link 4</a></li>
+                  <li><a href="http://guides.lib.umich.edu/c.php?g=283063&p=4471741">Link 1</a></li>
+                  <li><a href="https://www.nytimes.com/2017/01/19/learning/lesson-plans/evaluating-sources-in-a-post-truth-world-ideas-for-teaching-and-learning-about-fake-news.html">Link 2</a></li>
+                  <li><a href="http://guides.library.stonybrook.edu/fakenews/resources">Link 3</a></li>
                 </ol>
 <<<<<<< HEAD
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>Check</button>
