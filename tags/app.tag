@@ -23,6 +23,7 @@
   app.selectedPostID = -1;
   app.correct = 0;
   app.incorrect = 0;
+  app.notification = 0;
   app.postList = [
   {
     postID: 0,
@@ -36,6 +37,7 @@
     title: "January 2018 was fifth warmest January on record",
     isFake: false,
     isRead: false,
+    isResponded: 0,
     question: "Is the date right?",
 		choices: [
 					"yes",
@@ -56,6 +58,7 @@
     title: "Climate Change",
     isFake: true,
     isRead: false,
+    isResponded: 0,
     question: "Did you check the resources?",
     choices: [
           "yes",
@@ -76,6 +79,7 @@
     title: "Here’s a Timeline of the Major Gun Control Laws in America",
     isFake: false,
     isRead: false,
+    isResponded: 0,
     question: "What's the resources?",
     choices: [
           "yes",

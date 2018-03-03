@@ -23,21 +23,39 @@
 
             </div><!-- /.blog-main -->
 
-            <aside class="col-md-4 blog-sidebar" if={ opts.selectedPost.isFake }>
-              <div class="p-3 mb-3 bg-light">
+            <aside class="col-md-4 blog-sidebar">
+              <div class="p-3 mb-3 bg-light" if={ !opts.selectedPost.isResponded }>
                 <h4 class="font-italic">Is this fake news?</h4>
-                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>Yes</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>No</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>Maybe</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="yes">Yes</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="no">No</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="maybe">Maybe</button>
               </div>
-              <div class="p-3 mb-3 alert alert-danger">
-                <h4 class="font-italic">Why is this fake news?</h4>
-                <p class="mb-0"> The author takes only a portion of a climate period to support his claim that global warming isn't occurring instead of revealing the entire statistics published by NASA originally. </p>
-              </div>
-            </aside><!-- /.blog-sidebar -->
 
-            <aside class="col-md-4 blog-sidebar" if={ !opts.selectedPost.isFake }>
-              <div class="p-3 alert alert-primary">
+              <!-- Display this section after responding to the question -->
+              <!-- Correct Feedback -->
+              <div class="alert alert-danger alert-dismissible fade show" role="alert" if={ opts.selectedPost.isResponded == 2}>
+                <span>Your answer is incorrect</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!-- Incorrect Feedback -->
+              <div class="alert alert-success alert-dismissible fade show" role="alert" if={ opts.selectedPost.isResponded == 1}>
+                <span>Your answer is correct</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="p-3 mb-3 alert alert-warning" if={ opts.selectedPost.isResponded && opts.selectedPost.isFake }>
+                <h4 class="font-italic">Why is this fake news?</h4>
+                <p class="mb-0">This info need to be retrieved from the post array rather than hardcoded</p>
+              </div>
+
+              <!-- Allow to share the news if it is real -->
+              <div class="p-3 alert alert-warning" if={ opts.selectedPost.isResponded && !opts.selectedPost.isFake }>
+                <h4 class="font-italic">Why is this real news?</h4>
+                <p class="mb-3">This info need to be retrieved from the post array rather than hardcoded</p>
                 <h4 class="font-italic">Share this news</h4>
                 <ol class="list-unstyled mb-0">
                   <li><a href="#">Facebook</a></li>
@@ -57,8 +75,23 @@
       clearTimeout(this.timer);
     }
 
-    check(event){
-      this.newClass = "xclass";
+    check(event) {
+      //this.newClass = "xclass";
+
+      if ((event.target.value == "yes" && opts.selectedPost.isFake) ||
+          (event.target.value == "no" && !opts.selectedPost.isFake))
+      {
+        this.parent.correct += 1;
+        opts.selectedPost.isResponded = 1;
+      }
+      else
+      {
+        this.parent.incorrect += 1;
+        opts.selectedPost.isResponded = 2;
+      }
+
+      this.parent.notification += 1;
+      observable.trigger('updateResult', this.parent);
     }
 
     function setRead() {
