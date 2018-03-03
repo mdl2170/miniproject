@@ -50,6 +50,7 @@
         </main>
   <script>
     this.timer = setTimeout(setRead, 30000);
+    window.scrollTo(0, 0);
 
     goBack() {
       observable.trigger('postSelected', -1);
