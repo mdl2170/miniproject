@@ -5,10 +5,13 @@
       <h4>{ title }</h4>
       <p><small class="text-muted">{ publishedDate }</small><br/>
       <small class="text-muted">by { author }</small></p>
-      <p class="card-text">{ bodyText }</p>
+      <p class="card-text">{ excerpt }</p>
+      <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-outline-secondary"  onclick={ read }>Read</button>
           <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ share }>Share</button>
+        </div>
+        <span class="badge badge-secondary" if={ isRead }><i class="fas fa-check"></i> Read</span>
       </div>
     </div>
   </div>

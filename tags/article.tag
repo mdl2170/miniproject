@@ -3,7 +3,7 @@
       <header class="py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
-            <a class="btn btn-sm btn-outline-secondary" href="#" onclick={ goBack }>Go back</a>
+            <button class="btn btn-sm btn-outline-secondary" onclick={ goBack }>Go back</button>
           </div>
         </div>
       </header>
@@ -16,46 +16,23 @@
                 <h2 class="blog-post-title"><span class = "{newClass}">{ opts.selectedPost.title }</span></h2>
                 <p class=" blog-post-meta"><span class = "{newClass}">{ opts.selectedPost.publishedDate } </span><br> by <a href="#"><span class = "{newClass}">{ opts.selectedPost.author }</span></a></p>
                 <hr>
-                <img src="{ opts.selectedPost.imageURL }" class="img-fluid">
+                <img src="{ opts.selectedPost.imageURL }" class="img-fluid mb-4">
 
-                <span>{ opts.selectedPost.bodyText }</span>
-                <br>
-                  <br>
-                    <br>
-
-<p class=" blog-post-meta ">{ opts.selectedPost.question }</p>
-
-<label each={ choice in opts.selectedPost.choices }>
-  <input type="radio"  value={ opts.selectedPost.answer } onclick={ setAnswer }></input> { choice }<br>
-</label>
-
-
-
-
+                <span><raw content="{ opts.selectedPost.bodyText }"/></span>
               </div><!-- /.blog-post -->
 
             </div><!-- /.blog-main -->
 
             <aside class="col-md-4 blog-sidebar" if={ opts.selectedPost.isFake }>
-              <div>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>Check the fact</button>
-                  <br>
-                    <br>
+              <div class="p-3 mb-3 bg-light">
+                <h4 class="font-italic">Is this fake news?</h4>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>Yes</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>No</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check }>Maybe</button>
               </div>
               <div class="p-3 mb-3 alert alert-danger">
                 <h4 class="font-italic">Why is this fake news?</h4>
                 <p class="mb-0"> The author takes only a portion of a climate period to support his claim that global warming isn't occurring instead of revealing the entire statistics published by NASA originally. </p>
-              </div>
-
-              <div class="p-3 bg-light">
-                <h4 class="font-italic">Useful Resources</h4>
-                <ol class="list-unstyled mb-0">
-                  <li><a href="#">Link 1</a></li>
-                  <li><a href="#">Link 2</a></li>
-                  <li><a href="#">Link 3</a></li>
-                  <li><a href="#">Link 4</a></li>
-                </ol>
-
               </div>
             </aside><!-- /.blog-sidebar -->
 
@@ -72,14 +49,21 @@
 
         </main>
   <script>
+    this.timer = setTimeout(setRead, 30000);
 
-  goBack() {
+    goBack() {
       observable.trigger('postSelected', -1);
-  }
-  check(event){
-    this.newClass = "xclass";
-
+      clearTimeout(this.timer);
     }
+
+    check(event){
+      this.newClass = "xclass";
+    }
+
+    function setRead() {
+      opts.selectedPost.isRead = true;
+    }
+
   </script>
   <style>
   .xclass{
