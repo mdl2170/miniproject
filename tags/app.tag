@@ -41,7 +41,7 @@
     isFake: false,
     isRead: false,
     isResponded: 0,
-    question: "Is the date right?",
+    question: "Is the date reference accurate?",
 		choices: [
 					"yes",
 					"no",
@@ -91,7 +91,7 @@
     isFake: false,
     isRead: false,
     isResponded: 0,
-    question: "What's the resources?",
+    question: "Is the U.S. Constitution reference accurate?",
     choices: [
           "yes",
           "no",
