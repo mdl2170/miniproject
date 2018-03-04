@@ -38,6 +38,8 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
+                <p>{ opts.selectedPost.question }</p>
+                <button each={ word in opts.selectedPost.choices} type="button" class="btn btn-sm btn-outline-secondary"  value="yes"> {word}  </button> 
               </div>
               <!-- Incorrect Feedback -->
               <div class="alert alert-success alert-dismissible fade show" role="alert" if={ opts.selectedPost.isResponded == 1}>
@@ -50,6 +52,8 @@
               <div class="p-3 mb-3 alert alert-warning" if={ opts.selectedPost.isResponded && opts.selectedPost.isFake }>
                 <h4 class="font-italic">Why is this fake news?</h4>
                 <p class="mb-0">This is a fake news because the author only specifies a portion of a climate period as his data to indicate that there is no global warming.</p>
+
+
               </div>
 
               <!-- Allow to share the news if it is real -->
