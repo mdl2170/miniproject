@@ -49,13 +49,13 @@
 
               <div class="p-3 mb-3 alert alert-warning" if={ opts.selectedPost.isResponded && opts.selectedPost.isFake }>
                 <h4 class="font-italic">Why is this fake news?</h4>
-                <p class="mb-0">This info need to be retrieved from the post array rather than hardcoded</p>
+                <p class="mb-0">This is a fake news because the author only specifies a portion of a climate period as his data to indicate that there is no global warming.</p>
               </div>
 
               <!-- Allow to share the news if it is real -->
               <div class="p-3 alert alert-warning" if={ opts.selectedPost.isResponded && !opts.selectedPost.isFake }>
                 <h4 class="font-italic">Why is this real news?</h4>
-                <p class="mb-3">This info need to be retrieved from the post array rather than hardcoded</p>
+                <p class="mb-3">This news is real because it uses credible references and data.</p>
                 <h4 class="font-italic">Share this news</h4>
                 <ol class="list-unstyled mb-0">
                   <li><a href="#">Facebook</a></li>
