@@ -13,12 +13,16 @@
           <div class="row">
             <div class="col-md-8 blog-main">
               <div class="blog-post">
-                <h2 class="blog-post-title"><span class = "{newClass}">{ opts.selectedPost.title }</span></h2>
+                <h2 class="blog-post-title"><span>{ opts.selectedPost.title }</span></h2>
                 <p class=" blog-post-meta"><span class = "{newClass}">{ opts.selectedPost.publishedDate } </span><br> by <a href="#"><span class = "{newClass}">{ opts.selectedPost.author }</span></a></p>
                 <hr>
                 <img src="{ opts.selectedPost.imageURL }" class="img-fluid mb-4">
 
-                <span><raw content="{ opts.selectedPost.bodyText }"/></span>
+                <span class="{noHide}"><raw content="{ opts.selectedPost.bodyText }"/></span>
+                <span class= "{hide1}" ><raw content="{ opts.selectedPost.bodyTextHighlight }"/></span>
+
+
+
               </div><!-- /.blog-post -->
 
             </div><!-- /.blog-main -->
@@ -29,6 +33,7 @@
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="yes">Yes</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="no">No</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="maybe">Maybe</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ checkClues } value="maybe">Get some clues</button>
               </div>
 
               <!-- Display this section after responding to the question -->
@@ -39,7 +44,9 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
                 <p>{ opts.selectedPost.question }</p>
-                <button each={ word in opts.selectedPost.choices} type="button" class="btn btn-sm btn-outline-secondary"  value="yes"> {word}  </button> 
+                <button each={ word in opts.selectedPost.choices} type="button" class="btn btn-sm btn-outline-secondary"> {word} </button>
+
+
               </div>
               <!-- Incorrect Feedback -->
               <div class="alert alert-success alert-dismissible fade show" role="alert" if={ opts.selectedPost.isResponded == 1}>
@@ -73,12 +80,20 @@
   <script>
     this.timer = setTimeout(setRead, 30000);
     window.scrollTo(0, 0);
+    this.hide1 = "hide";
 
     goBack() {
       observable.trigger('postSelected', -1);
       clearTimeout(this.timer);
     }
 
+checkClues(event) {
+
+  this.newClass = "highLightClass";
+  this.noHide = "hide";
+  this.hide1= "";
+
+}
     check(event) {
       //this.newClass = "xclass";
 
@@ -104,8 +119,11 @@
 
   </script>
   <style>
-  .xclass{
+  .highLightClass{
     background-color: yellow;
+  }
+  .hide{
+    display: none;
   }
   </style>
 </article>
