@@ -118,13 +118,10 @@
   });
   </script>
 
-
   <style>
   .highLightClass{
     background-color: yellow;
-  }
-  .hide{
-    display: none;
+    cursor: pointer;
   }
   </style>
 </article>
