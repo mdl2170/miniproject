@@ -28,6 +28,11 @@
         alert("Noteworthy news to share.");
       }
   }
+
+  function myFunction(){
+    console.log("hello");
+  }
+  
 </script>
 
 </post>

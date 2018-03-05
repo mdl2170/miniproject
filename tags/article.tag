@@ -14,7 +14,7 @@
             <div class="col-md-8 blog-main">
               <div class="blog-post">
                 <h2 class="blog-post-title"><span>{ opts.selectedPost.title }</span></h2>
-                <p class=" blog-post-meta"><span class = "{newClass}">{ opts.selectedPost.publishedDate } </span><br> by <a href="#"><span class = "{newClass}">{ opts.selectedPost.author }</span></a></p>
+                <p class=" blog-post-meta"><span class = "{newClass}" data-toggle="popover" data-content="Did you check the date? Is it right?" data-original-title="Think again" data-placement="top" >{ opts.selectedPost.publishedDate } </span><br> by <a href="#"><span class = "{newClass}" data-toggle="popover" data-content="Is the author reliable?" data-original-title="Think again" data-placement="top" >{ opts.selectedPost.author }</span></a></p>
                 <hr>
                 <img src="{ opts.selectedPost.imageURL }" class="img-fluid mb-4">
 
@@ -30,10 +30,13 @@
             <aside class="col-md-4 blog-sidebar">
               <div class="p-3 mb-3 bg-light" if={ !opts.selectedPost.isResponded }>
                 <h4 class="font-italic">Is this fake news?</h4>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ checkClues } value="maybe">Get some clues</button>
+                  <br>
+                  <br>
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="yes">Yes</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="no">No</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="maybe">Maybe</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ checkClues } value="maybe">Get some clues</button>
+
               </div>
 
               <!-- Display this section after responding to the question -->
@@ -43,8 +46,8 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
-                <p>{ opts.selectedPost.question }</p>
-                <button each={ word in opts.selectedPost.choices} type="button" class="btn btn-sm btn-outline-secondary"> {word} </button>
+                <!--  <p>{ opts.selectedPost.question }</p>
+                <button each={ word in opts.selectedPost.choices} type="button" class="btn btn-sm btn-outline-secondary"> {word} </button>-->
 
 
               </div>
@@ -117,7 +120,20 @@ checkClues(event) {
       opts.selectedPost.isRead = true;
     }
 
+    $(function () {
+    $('.example-popover').popover({
+      container: 'body'
+    })
+  })
+
+    $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+
+
   </script>
+
+
   <style>
   .highLightClass{
     background-color: yellow;
