@@ -5,7 +5,7 @@
     <li><span class="text-white">Incorrect: { incorrect }</span></li>
   </ul>
 
-<script>
+  <script>
   var result = this;
   result.correct = 0;
   result.incorrect = 0;

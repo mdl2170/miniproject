@@ -2,7 +2,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation" onclick={ reset }>
     <span class="navbar-toggler-icon"></span><span class="badge badge-danger" if={ notification }>{ notification }</span>
   </button>
-
+  
   <script>
   var that = this;
   var appHandler;
