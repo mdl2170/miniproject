@@ -14,7 +14,8 @@
       <div class="col-md-8 blog-main">
         <div class="blog-post">
           <h2 class="blog-post-title"><span>{ opts.selectedPost.title }</span></h2>
-          <p class="blog-post-meta"><span class="{newClass}" data-toggle="popover" data-content="Did you check the date? Is it right?" data-original-title="Think again" data-placement="top">{ opts.selectedPost.publishedDate } </span><br> by <a href="#"><span class="{newClass}" data-toggle="popover" data-content="Is the author reliable?" data-original-title="Think again" data-placement="top">{ opts.selectedPost.author }</span></a></p>
+          <p hide={ clueOn } class="blog-post-meta">{ opts.selectedPost.publishedDate }<br> by <a href="#">{ opts.selectedPost.author }</a></p>
+          <p show={ clueOn } class="blog-post-meta"><span class="highLightClass" data-toggle="popover" data-content="Did you check the date? Is it right?" data-original-title="Think again" data-placement="top">{ opts.selectedPost.publishedDate } </span><br> by <a href="#"><span class="{newClass}" data-toggle="popover" data-content="Is the author reliable?" data-original-title="Think again" data-placement="top">{ opts.selectedPost.author }</span></a></p>
           <hr>
           <img src="{ opts.selectedPost.imageURL }" class="img-fluid mb-4">
 
