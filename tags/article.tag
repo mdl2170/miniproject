@@ -31,8 +31,9 @@
               <div class="p-3 mb-3 bg-light" if={ !opts.selectedPost.isResponded }>
                 <h4 class="font-italic">Is this fake news?</h4>
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ checkClues } value="maybe">Get some clues</button>
-                  <br>
-                  <br>
+                    <span class=" {hide1} blog-post-meta">Click on the highlight!</span>
+                      <br><br>
+
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="yes">Yes</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="no">No</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick={ check } value="maybe">Maybe</button>
